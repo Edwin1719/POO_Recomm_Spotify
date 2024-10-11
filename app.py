@@ -10,8 +10,11 @@ def main():
 
     st.title("Songs Recommender")
 
-    # Entrada del usuario en la barra lateral
-    track_name = st.sidebar.text_input("Enter the name of a song:")
+    # Crear una lista de canciones para la lista desplegable
+    track_list = recommender.data['Track'].tolist()  # Obtener la lista de canciones
+
+    # Selección de canción en la barra lateral
+    track_name = st.sidebar.selectbox("Select a song:", track_list)
 
     # Número de recomendaciones en la barra lateral
     num_recommendations = st.sidebar.slider("Number of recommendations:", 1, 10, 5)
@@ -21,12 +24,12 @@ def main():
         if track_name:
             try:
                 recommendations = recommender.recommend_similar_tracks(track_name, n=num_recommendations)
-                st.write("Recommendaciones:")
+                st.write("Recommendations:")
                 st.dataframe(recommendations)
             except IndexError:
-                st.write("Canción no encontrada en la base de datos.")
+                st.write("Song not found in the database.")
         else:
-            st.write("Ingrese el nombre de una canción para obtener recomendaciones.")
+            st.write("Please select a song to get recommendations.")
 
     # Mostrar las top n canciones
     st.subheader("Top Songs")
