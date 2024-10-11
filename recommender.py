@@ -4,7 +4,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Asegúrate de que el archivo CSV esté en la misma carpeta o proporciona la ruta correcta
-spotify = pd.read_csv("RECOM_SPOTIFY/Most Streamed Spotify Songs 2024.csv", encoding='latin-1')
+spotify = pd.read_csv("Most Streamed Spotify Songs 2024.csv", encoding='latin-1')
 
 # Limpiar los datos (puedes usar la función que ya tienes) 
 columns_to_clean = ['Spotify Streams', 'Spotify Popularity', 'Track Score', 
