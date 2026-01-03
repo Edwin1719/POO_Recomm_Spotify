@@ -3,7 +3,7 @@ streamlit==1.32.0
 
 # Data Processing & Machine Learning
 pandas==2.2.3
-numpy==1.24.3
+numpy==1.26.0
 scikit-learn==1.5.2
 
 # Visualization
