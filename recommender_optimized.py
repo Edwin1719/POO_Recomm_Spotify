@@ -17,7 +17,7 @@ import numpy as np
 from sklearn.preprocessing import RobustScaler
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from fuzzywuzzy import process, fuzz
+from thefuzz import process, fuzz
 import warnings
 from typing import Dict, List, Tuple, Optional
 import os
